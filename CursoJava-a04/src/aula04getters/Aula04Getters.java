@@ -15,7 +15,7 @@ public class Aula04Getters {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Caneta c1 = new Caneta();
+        Caneta c1 = new Caneta("NIC","Amarela",0.4f,true);
         //c1.setModelo("BIC");
         //c1.modelo = "BIC"; // aceita pois modelo é Public!
         //c1.setPonta(0.5f);

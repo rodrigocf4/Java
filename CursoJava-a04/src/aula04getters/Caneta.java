@@ -13,44 +13,52 @@ public class Caneta {
     public String cor;
     private float ponta;
     private boolean tampada;
-    
-    public Caneta() { // Este é o construtor: Mesmo nome da classe!
-        this.modelo = "BIC";
-        this.cor = "Azul";
-        this.ponta = 0.5f;
-        this.tampar();
-              
-    }    
+
+    public Caneta(String modelo, String cor, float ponta, boolean tampada) {
+        this.modelo = modelo;
+        this.cor = cor;
+        this.ponta = ponta;
+        this.tampada = tampada;
+        
+    }
 
     public String getModelo() {
-        return this.modelo;
+        return modelo;
     }
-    public void setModelo(String m) {
-        this.modelo = m;  
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
-    public float getPonta() {
-        return this.ponta;
-    }
-    public void setPonta(float p) { //void = não retorna (vazio)
-        this.ponta = p;
-    }
-    public void setCor(String c) {
-        this.cor = c;
-    }
+
     public String getCor() {
-        return this.cor;
+        return cor;
     }
-    public void tampar() {
-        this.tampada = true;
+
+    public void setCor(String cor) {
+        this.cor = cor;
     }
-    public void destampar() {
-        this.tampada = false;
+
+    public float getPonta() {
+        return ponta;
     }
-    public void status() {
-        System.out.println("SOBRE A CANETA:");
-        System.out.println("Modelo: " + this.modelo);
-        System.out.println("Ponta: " + this.getPonta());
+
+    public void setPonta(float ponta) {
+        this.ponta = ponta;
+    }
+
+    public boolean isTampada() {
+        return tampada;
+    }
+
+    public void setTampada(boolean tampada) {
+        this.tampada = tampada;
+    }
+    
+    public void status (){
+        System.out.println("SOBRE A CANETA: ");
+        System.out.println("Modelo " + this.modelo);
+        System.out.println("Ponta: " + this.ponta);
         System.out.println("Cor: " + this.cor);
         System.out.println("Tampada: " + this.tampada);
-    }  
+    }
 }
