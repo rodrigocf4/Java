@@ -14,11 +14,12 @@ public class Caneta {
     private float ponta;
     private boolean tampada;
     
-    public void Caneta() { // Este é o construtor: Mesmo nome da classe!
-        this.setTampar();
-        this.cor = "Azul";
-        this.setPonta(0.5f);
+    public Caneta() { // Este é o construtor: Mesmo nome da classe!
         this.modelo = "BIC";
+        this.cor = "Azul";
+        this.ponta = 0.5f;
+        this.tampar();
+              
     }    
 
     public String getModelo() {
@@ -39,8 +40,11 @@ public class Caneta {
     public String getCor() {
         return this.cor;
     }
-    public void setTampar() {
+    public void tampar() {
         this.tampada = true;
+    }
+    public void destampar() {
+        this.tampada = false;
     }
     public void status() {
         System.out.println("SOBRE A CANETA:");
