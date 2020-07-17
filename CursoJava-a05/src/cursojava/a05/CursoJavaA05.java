@@ -7,7 +7,7 @@ package cursojava.a05;
 
 /**
  *
- * @author rodri
+ * @author Rodrigo Freitas
  */
 public class CursoJavaA05 {
 
