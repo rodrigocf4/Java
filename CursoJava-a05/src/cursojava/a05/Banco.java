@@ -18,17 +18,28 @@ public class Banco {
     private boolean status;
 
     public Banco() {
-        this.saldo = 0;
-        this.status = false;
+        this.setSaldo(0);
+        this.setStatus(false);
     }
     
-    public void abrirConta() {
+    public void estadoAtual() {
+        System.out.println("----------------------------");
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("Status: " + this.getStatus());
+    }
+    
+    public void abrirConta(String t) {
+        this.setTipo(t);
         this.setStatus(true);
         if(this.getTipo() == "cc") {
-            this.setSaldo(50f);
+            this.setSaldo(50);
         } else if(this.getTipo() == "cp") {
-            this.setSaldo(150f);
+            this.setSaldo(150);
         }
+        System.out.println("Conta aberta com sucesso!");
         
     }
     
@@ -40,45 +51,82 @@ public class Banco {
             System.out.println("Conta fechada com sucesso! Volte sempre!");   
         }
     }
-
+    
+    public void depositar(float v) {
+        if(this.getStatus() == true) {
+            this.setSaldo(this.getSaldo() + v );
+            System.out.println("Depósito realizado na conta de " + getDono());
+        } else {
+            System.out.println("Impossível depositar!!");
+        }
+    }
+    
+    public void sacar(float s) {
+        if(this.getStatus() == true && this.getSaldo() >= s) {
+            setSaldo(getSaldo() - s);
+            System.out.println("Saque realizado na conta de " + getDono());
+        } else {
+            System.out.println("Impossível sacar! Pague suas dívidas lazarento");
+        }
+    }
+    
+    public void pagarMensalidade() {
+        int m = 0;
+        if(this.getTipo() == "cc") {
+            m = 12;
+        } else if(this.getTipo() == "cp"){
+            m = 20;
+        }
+        if(this.getStatus() == true) {
+            this.setSaldo(this.getSaldo() - m);
+            System.out.println("Mensalidade paga com sucesso!");
+        }else {
+            System.out.println("Saldo insuficiente para pagar!");
+                    
+        }
+        
+        
+        
+    }
+    
     public int getNumConta() {
-        return numConta;
+        return this.numConta;
     }
 
-    public void setNumConta(int numConta) {
-        this.numConta = numConta;
+    public void setNumConta(int n) {
+        this.numConta = n;
     }
 
     public String getTipo() {
-        return tipo;
+        return this.tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipo(String t) {
+        this.tipo = t;
     }
 
     public String getDono() {
-        return dono;
+        return this.dono;
     }
 
-    public void setDono(String dono) {
-        this.dono = dono;
+    public void setDono(String d) {
+        this.dono = d;
     }
 
     public float getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
+    public void setSaldo(float s) {
+        this.saldo = s;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean getStatus() {
+        return this.status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setStatus(boolean st) {
+        this.status = st;
     }
     
     
