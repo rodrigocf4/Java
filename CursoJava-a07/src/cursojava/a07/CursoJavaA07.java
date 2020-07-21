@@ -30,7 +30,13 @@ public class CursoJavaA07 {
         l[5] = new Lutador("Anjinho", "Argentina", 30,1.81f,
                             105.7f,12,2,4);
         
-        l[3].status();
+        //l[3].status();
+        
+        Luta luta01 = new Luta();
+        luta01.marcarLuta(l[0], l[1]);
+        luta01.lutar();
+        l[0].status();
+        l[1].status();
 
     }
     
